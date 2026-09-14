@@ -1,0 +1,38 @@
+{
+  "id": "2026-09-14b",
+  "label": "2026 · 第 38 周 · 普通人 vibe 出来的",
+  "dateRange": "2026-09-01 — 2026-09-14",
+  "publishedDate": "2026-09-14",
+  "role": "main",
+  "note": "硬转向：本周只收普通人用 AI 编程工具做出来的成品（游戏、怀旧壳、浏览器实验、个人小工具、可逛展览）。窗口仍是 2026-09-01 到 09-14。DeepMind / 评测场 / YC 深科技 / agent 基建本周不收。打开弹窗就能看懂，不必点官网。",
+  "theme": "这两周最有意思的，不是又出了什么编程代理，而是普通人真交出来的东西：有人让朋友挤进同一台机甲；有人一小时 vibe 出 Windows 3.1 壳；有人把 PS Vita 塞进浏览器；有人给自己做黄瓜专注钟；有人三天拼出独立开发者主页；有人半小时做出可点的地球史。重点是创意输出，不是工具本身。",
+  "themeShort": "普通人 vibe 出来的成品",
+  "patterns": [
+    {
+      "id": "weekend-ship",
+      "name": "一个人周末做出来的",
+      "summary": "不为融资故事，先把自己想玩的、想用的做出来；AI 编程当主笔，人负责品味和验收。",
+      "builds": ["mecha-royale", "myindie-space"]
+    },
+    {
+      "id": "nostalgia-rebuild",
+      "name": "把老古董界面重新捏出来",
+      "summary": "不靠模拟整台老电脑，而用现代代码重画记忆里的壳，挂上今天的软件，怀旧三十秒也值。",
+      "builds": ["reprogman"]
+    },
+    {
+      "id": "weird-personal",
+      "name": "怪就怪在个人口味",
+      "summary": "选题可以又冷又难：浏览器里的旧掌机、只给自己用的黄瓜闹钟——重要的是真交得出链接。",
+      "builds": ["vitaslop", "cucumbero"]
+    },
+    {
+      "id": "thirty-min-exhibit",
+      "name": "半小时先做出能逛的展览",
+      "summary": "别先写长文方案。用 vibe coding 尽快交出可点击的成品，再丢到社区让人玩。",
+      "builds": ["earth-ethanplus"]
+    }
+  ],
+  "buildIds": ["mecha-royale", "reprogman", "vitaslop", "cucumbero", "myindie-space", "earth-ethanplus"],
+  "builds": []
+}
