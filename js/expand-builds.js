@@ -1,6 +1,7 @@
 /**
  * Expand week.buildIds -> content/builds/{id}.json before app.js reads the week.
  * Must load BEFORE js/app.js.
+ * Also exposes window.__KAIYAN_WEEK_BUILDS__ for modal-eli5.js.
  */
 (function () {
   const orig = window.fetch.bind(window);
@@ -11,9 +12,15 @@
     try {
       const data = await res.clone().json();
       const ids = data && data.buildIds;
-      if (!Array.isArray(ids) || !ids.length) return res;
+      if (!Array.isArray(ids) || !ids.length) {
+        if (data && Array.isArray(data.builds)) window.__KAIYAN_WEEK_BUILDS__ = data.builds;
+        return res;
+      }
       const builds = Array.isArray(data.builds) ? data.builds : [];
-      if (builds.length >= ids.length) return res;
+      if (builds.length >= ids.length) {
+        window.__KAIYAN_WEEK_BUILDS__ = builds;
+        return res;
+      }
       const base = url.replace(/weeks\/[^/?#]+\.json.*$/, "");
       const loaded = await Promise.all(
         ids.map((id) => orig(base + "builds/" + id + ".json").then((r) => {
@@ -22,6 +29,7 @@
         }))
       );
       data.builds = loaded;
+      window.__KAIYAN_WEEK_BUILDS__ = loaded;
       return new Response(JSON.stringify(data), {
         status: 200,
         headers: { "Content-Type": "application/json" },
