@@ -1,1 +1,12 @@
-LOAD_FROM_FILE:/workspace/kaiyan-rewrite/2026-09-14.json
+{
+  "id": "2026-09-14",
+  "label": "2026 · 第 38 周",
+  "dateRange": "2026-09-01 — 2026-09-14",
+  "publishedDate": "2026-09-14",
+  "role": "main",
+  "note": "STUB_PENDING_FULL_ELI5",
+  "theme": "换问题问法",
+  "themeShort": "换问题问法",
+  "patterns": [],
+  "builds": []
+}
