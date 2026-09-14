@@ -1,12 +1,13 @@
 /**
- * Split folded 【…】 blocks in 人话解释 into 人话 / 打个比方 / 以前 vs 现在 / 举个例子走一遍.
- * Load AFTER js/app.js.
+ * ELI5 detail enhancer. Load AFTER js/app.js.
+ * Prefers structured fields: eli5, analogy, beforeAfter, walkthrough.
+ * Falls back to splitting folded 【…】 blocks inside 人话解释.
  */
 (function () {
   const ORDER = [
-    { marker: "【打个比方】", title: "打个比方", cls: "detail-analogy" },
-    { marker: "【以前 vs 现在】", title: "以前 vs 现在", cls: "detail-before-after" },
-    { marker: "【举个例子走一遍】", title: "举个例子走一遍", cls: "detail-walkthrough" },
+    { marker: "【打个比方】", title: "打个比方", cls: "detail-analogy", key: "analogy" },
+    { marker: "【以前 vs 现在】", title: "以前 vs 现在", cls: "detail-before-after", key: "beforeAfter" },
+    { marker: "【举个例子走一遍】", title: "举个例子走一遍", cls: "detail-walkthrough", key: "walkthrough" },
   ];
 
   function esc(s) {
@@ -25,6 +26,20 @@
       .filter(Boolean)
       .map((p) => "<p>" + esc(p).replace(/\n/g, "<br/>") + "</p>")
       .join("");
+  }
+
+  function findBuild(id) {
+    try {
+      const builds = window.__KAIYAN_WEEK_BUILDS__ || [];
+      return builds.find((b) => b && b.id === id) || null;
+    } catch (_) {
+      return null;
+    }
+  }
+
+  function activeBuildId() {
+    const m = (location.hash || "").match(/#\/build\/([^/?#]+)/);
+    return m ? decodeURIComponent(m[1]) : null;
   }
 
   function splitFolded(raw) {
@@ -46,6 +61,19 @@
     return { main, blocks };
   }
 
+  function fromStructured(build) {
+    if (!build) return null;
+    const main = (build.eli5 || build.plainExplain || "").trim();
+    if (!main) return null;
+    const blocks = [];
+    ORDER.forEach((o) => {
+      const text = (build[o.key] || "").trim();
+      if (text) blocks.push({ title: o.title, cls: o.cls, text });
+    });
+    if (!blocks.length && !build.eli5) return null;
+    return { main, blocks };
+  }
+
   function enhance(body) {
     if (!body || body.dataset.eli5Done === "1") return;
     if (!body.querySelector(".modal-header")) return;
@@ -55,10 +83,14 @@
       if (h && /人话/.test(h.textContent || "")) target = sec;
     });
     if (!target || target.classList.contains("detail-eli5")) return;
-    const p = target.querySelector("p");
-    if (!p) return;
-    const raw = p.innerText || "";
-    const split = splitFolded(raw);
+
+    const build = findBuild(activeBuildId());
+    let split = fromStructured(build);
+    if (!split) {
+      const p = target.querySelector("p");
+      if (!p) return;
+      split = splitFolded(p.innerText || "");
+    }
     if (!split) return;
 
     body.dataset.eli5Done = "1";
