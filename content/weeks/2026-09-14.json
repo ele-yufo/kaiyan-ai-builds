@@ -1,1 +1,160 @@
-{"id":"2026-09-14","label":"2026 · 第 38 周","dateRange":"2026-09-14 — 2026-09-20","role":"seasoning","note":"本周为感官/艺术向「调剂」批次：展示语言如何编译成可摸、可闻、可听、可跑的物理世界。艺术域过拟合仅作佐料，非主菜；生产信任与协作面等主线策展将另行重做。","theme":"AI 走出对话框：把语言编译成可摸、可闻、可听、可跑的物理世界。（调剂周）","themeShort":"语言编译成可感的物理世界（调剂）","patterns":[{"id":"physics-executable","name":"物理可执行","summary":"输出不是示意动画或截图，而是能按物理规律跑起来、或能按工艺打出来的可执行物。","builds":["mechanica","text2tactile"]},{"id":"sensory-compile","name":"感官编译","summary":"把自然语言当成源码，编译进听、闻、味等非屏幕感官通道，而不是再生成一段文字回复。","builds":["echo-canvas","smell-printer","tastepepai"]},{"id":"timescale-separation","name":"时间尺度分离","summary":"慢思考的 AI 只改写下一乐句的编排意图；快引擎按毫秒出音符——模型延迟对演奏者几乎不可见。","builds":["conductr"]}],"builds":[{"id":"mechanica","name":"Mechanica","org":"Caleb0796","url":"https://mechanica-museum.vercel.app/","sourceType":"hackathon","sourceLabel":"Devpost · Mechanica (Codex / GPT-5.6 museum)","sourceUrl":"https://devpost.com/software/xiaoqiang","category":"portfolio","tagline":"古机重生，按物理跑","oneLiner":"四台失传中国古机械的双语数字博物馆：尺寸有出处，运动靠物理仿真，讲解员拒绝编造。","plainExplain":"Mechanica 把候风地动仪、水运仪象台、记里鼓车、汉代提花织机从史料与草图重建成可交互 3D 展品。每个零件尺寸挂着版本化出处；齿轮与擒纵不是关键帧动画，而是可驱动的物理仿真。馆内 GPT 讲解员只依据当前展品记录作答，并在事实后标出处——超出馆藏的问题它会拒绝，而不是补脑补全。","painPoint":"多数「数字博物馆」是会转的静物：看得到外形，推不动因果链；尺寸从哪来、学者分歧如何呈现，界面往往抹平。","whyCool":"把「语言与草图里的机器」编译成可上手试跑的机制：注入震波、观察龙口落球，历史争论变成可切换的 rival 重建，而不是一句笼统介绍。","pattern":"physics-executable","variants":["课堂实验：学生改参数看机构是否仍自洽","把 rival 重建做成并排对照课","为其他文明机械馆扩充同一「出处优先」管线"],"flow":[{"label":"史料与草图","desc":"古文 · 考古 · 推断标注"},{"label":"版本化尺寸","desc":"JSON 挂出处，禁止瞎编数"},{"label":"物理仿真","desc":"可驱动机构而非关键帧"},{"label":"双语展陈","desc":"讲解员引用馆藏作答"}]},{"id":"echo-canvas","name":"Echo Canvas","org":"Kevin_Yang_tw","url":"https://devpost.com/software/echo-canvas-ujzksi","sourceType":"hackathon","sourceLabel":"Devpost · Echo Canvas","sourceUrl":"https://devpost.com/software/echo-canvas-ujzksi","category":"portfolio","tagline":"空间声学的线框草稿","oneLiner":"浏览器里用自然语言与视口一起编排空间声场，先听懂再进游戏引擎管线。","plainExplain":"Echo Canvas 是空间声学的早期工作台：在 2.5D / 混合 3D 场景里摆房间、听者、声源、墙体与门洞，也可用自然语言生成候选场景。模型输出被锁在模式感知的 schema 里，几何与材质要过校验才应用；确定性 worker 算遮挡、材质衰减与一阶反射，Web Audio + HRTF 在浏览器里立刻能听。Raw / Simulated 对照让「为什么声音变了」看得见。","painPoint":"空间音频往往要等关卡与中间件接好才评听，设计师、音效与客户早期只能纸上谈兵，改一次成本极高。","whyCool":"给声学补上视觉线框的地位：AI 只管受约束的场景作者层，实时 DSP 与几何诊断仍是确定性的——听感与路径解释绑在同一修订上。","pattern":"sensory-compile","variants":["导出到游戏引擎场景交换格式","用 SOFA / 头追做更准的双耳渲染","把诊断路径嵌进客户端评审会"],"flow":[{"label":"描述或手摆","desc":"自然语言 · 视口编辑"},{"label":"Schema 校验","desc":"几何 · 材质 · ID 合法"},{"label":"声学 worker","desc":"遮挡 · 门洞 · 反射"},{"label":"浏览器可听","desc":"HRTF · Raw/Sim 对照"}]},{"id":"smell-printer","name":"A Printer for Smell","org":"Naranbileg · Maral-Erdene","url":"https://devpost.com/software/a-printer-for-smell-ai-scent-songs","sourceType":"hackathon","sourceLabel":"Devpost · A Printer for Smell (AI Scent Songs)","sourceUrl":"https://devpost.com/software/a-printer-for-smell-ai-scent-songs","category":"business","tagline":"气味也有乐谱","oneLiner":"提示词编译成一份 plan.json（配方 + 时间轴），注射龙门架微升级投料，双扩散器交叉淡入成「气味歌」。","plainExplain":"这台「气味打印机」把自然语言意图（时长、强度、忌口）编成单一 plan.json：哪些精油、多少微升、走 A（清亮）还是 B（温厚）雾化器，以及分钟级功率时间轴。注射阵列按微升精度投料，双通道按时间轴交叉淡入，结束有冲洗避免串味。过敏过滤、强度上限与实体急停写进默认安全。","painPoint":"扩香机多半是「滴几滴碰运气」的单音符；LLM 能出图出码，却很少有人把空气当成可编程介质，更缺可复现的配方文件。","whyCool":"一份计划同时驱动配料与演出：气味被当成可排程的演出，而不是房间里的恒定背景味。","pattern":"sensory-compile","variants":["画廊 / 零售的情景气味节目单","与 MIDI/OSC 联奏的创作者 API","四重奏多雾化器空间编舞"],"flow":[{"label":"自然语言意图","desc":"偏好 · 时长 · 忌口"},{"label":"plan.json","desc":"配方 + A/B 时间轴"},{"label":"微升投料","desc":"龙门架 · 注射阵列"},{"label":"双雾交叉","desc":"气味歌 · 冲洗收尾"}]},{"id":"text2tactile","name":"Text2TactileGraphics","org":"CMU · SNU · UIUC","url":"https://ruihangao.github.io/Text2TactileGraphics/","sourceType":"paper","sourceLabel":"ECCV 2026 · Text-based Tactile Graphics Generation","sourceUrl":"https://ruihangao.github.io/Text2TactileGraphics/","category":"portfolio","tagline":"生成式图形摸得到","oneLiner":"文本提示直接生成可 3D 打印的 2.5D 触觉图：底板几何、触觉纹理与合规盲文一体交付。","plainExplain":"Text2TactileGraphics 针对视障可达性：普通文生图追求屏幕真实感，却不满足触觉可读与可制造约束。该系统从自然语言生成可制造的 2.5D 浮雕——模板引导底板、扩散纹理出可平铺法线、底板压平保证可摸可读，并嵌入标准盲文，最终输出水密封装网格供 SLA 打印。用户研究显示盲人与蒙眼对照者更偏好其实物结果。","painPoint":"触觉图难规模化、难个性化；现成生成模型对着屏幕优化，打印出来往往摸不清、制不了。","whyCool":"把生成式 AI 的交付面从像素推进到指尖：约束写进几何与工艺，而不是事后「能不能打」的补丁。","pattern":"physics-executable","variants":["教育教材一键出触觉插图","博物馆展品的可下载触觉版","交互式分区贴纹理给创作者精修"],"flow":[{"label":"文本提示","desc":"要表达的图形语义"},{"label":"底板浮雕","desc":"模板约束 · 2.5D 抬升"},{"label":"触觉纹理","desc":"可平铺法线 · 可交互"},{"label":"可打印网格","desc":"压平 · 盲文 · SLA"}]},{"id":"tastepepai","name":"TastePepAI","org":"Wang Lab · Hunan Normal Univ.","url":"http://www.wang-subgroup.com/TastePepAI.html","sourceType":"paper","sourceLabel":"PLOS Computational Biology · TastePepAI","sourceUrl":"https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1013602","category":"business","tagline":"按味道设计肽","oneLiner":"选定想要与想避开的味觉，AI 从头设计味觉肽序列，并接入毒性筛查。","plainExplain":"TastePepAI 面向食品场景的味觉肽从头设计：你勾选酸甜苦咸鲜中想要的 1–5 种味道，也可指定要避开的味道；LA-VAE 在序列潜空间里生成候选，SpepToxPred 做安全评估。单模式针对特定味组合精训，多模式则扩大候选多样性。团队已实验验证数十条甜/咸/鲜肽，把「找肽」从耗时抽提推进到可定制生成。","painPoint":"天然味觉肽发现慢、贵，难按目标风味组合定制；行业缺「要这种味、不要那种味」的可控设计入口。","whyCool":"味道成为可勾选的设计规格：语言级的感官目标直接编译成可合成评估的分子候选。","pattern":"sensory-compile","variants":["减盐减糖配方的鲜味肽替换","避开苦味的儿童食品线","把毒性筛查嵌进中试放行门禁"],"flow":[{"label":"点选味觉","desc":"想要 · 想避开"},{"label":"LA-VAE 生成","desc":"目标味剖面序列"},{"label":"毒性筛查","desc":"SpepToxPred"},{"label":"候选肽","desc":"可进入实验验证"}]},{"id":"conductr","name":"Conductr","org":"nanassound","url":"https://github.com/nanassound/conductr","sourceType":"open-source","sourceLabel":"GitHub · nanassound/conductr","sourceUrl":"https://github.com/nanassound/conductr","category":"portfolio","tagline":"指挥慢，乐队快","oneLiner":"浏览器生成式 MIDI 乐队：本地 C/WASM 引擎按步出音符，Claude 只做编曲导演，延迟藏在乐句之间。","plainExplain":"Conductr 同时跑三层时间尺度：约 15ms 的确定性 C 引擎出鼓/贝斯/旋律/和声；约 4 秒的演奏分析提取密度与力度；约 8 秒的 Opus 导演读摘要后改密度、调式与编配意图。引擎从不空等模型——AI 塑造的是下一乐句，不是当前音。语音或文字说「更放克」「只留鼓」，编配就变；经 Web MIDI 接到任意 DAW 或硬件合成器，本身不做音频合成。","painPoint":"若让大模型逐音符作曲，延迟与不确定性会毁掉现场演奏；纯规则序列器又缺少能听懂人话的编曲意图。","whyCool":"把 AI 放在「导演」而非「键盘手」的位置：时间尺度分离让 API 延迟在音乐上几乎不可见，乐队始终在响。","pattern":"timescale-separation","variants":["现场即兴：控制器输入驱动分析层","无 API 时回退规则导演保底可演","把导演意图映射到灯光 / 视效城市"],"flow":[{"label":"你在演奏","desc":"力度 · 密度 · 语音"},{"label":"快引擎","desc":"WASM 按步出 MIDI"},{"label":"慢导演","desc":"下乐句编配意图"},{"label":"DAW / 硬件","desc":"Web MIDI 播出"}]}]}
+{
+  "id": "2026-09-14",
+  "label": "2026 · 第 38 周",
+  "dateRange": "2026-09-01 — 2026-09-14",
+  "publishedDate": "2026-09-14",
+  "role": "main",
+  "note": "硬窗口仅收录 2026-09-01..09-14 内宣布/发表/上线/获奖的项目。大量 YC Demo Day 深科技（Lamb Labs / Parasma / Waddle / Atomarine 等）首发早于窗口，已剔除；PH 上 agent/Slack/MCP/CRM 基建与营销页亦剔除。本批仅 4 条通过『holy shit 跃迁』过滤——诚实少于 6。",
+  "theme": "本周主线不是又一个 agent 工具栏，而是『重新定义问题』：用现实当考官、把不可能穷举成图谱、让物理义务可审计、把强化学习变成可围观的竞赛。",
+  "themeShort": "意外问题定义与跨域跃迁",
+  "patterns": [
+    {
+      "id": "reality-judge",
+      "name": "现实即考官",
+      "summary": "分数不来自另一模型或人工量表，而来自尚未发生、随后会自行揭晓的结果或可核验的物理状态。",
+      "builds": ["koliseum", "veriphy"]
+    },
+    {
+      "id": "precompute-atlas",
+      "name": "不可能的穷举图",
+      "summary": "把实验室做不完的组合空间预先算成可检索图谱，让发现从『测什么』变成『先看哪里』。",
+      "builds": ["alphagenome-atlas"]
+    },
+    {
+      "id": "compete-to-train",
+      "name": "竞赛即训练接口",
+      "summary": "硬件未到货前，用公开对战与直播把策略训练变成可围观、可迁移的社交接口。",
+      "builds": ["duckfightclub"]
+    }
+  ],
+  "builds": [
+    {
+      "id": "alphagenome-atlas",
+      "name": "AlphaGenome Atlas",
+      "org": "Google DeepMind",
+      "url": "https://deepmind.google/blog/alphagenome-atlas-a-predictive-map-of-every-possible-dna-letter-change-in-the-human-genome/",
+      "publishedDate": "2026-09-08",
+      "dateEvidence": "DeepMind / Google 官方博文标注 September 8, 2026；PH 日榜 2026-09-09 收录",
+      "sourceType": "paper",
+      "sourceLabel": "Google DeepMind · AlphaGenome Atlas (2026-09-08)",
+      "sourceUrl": "https://deepmind.google/blog/alphagenome-atlas-a-predictive-map-of-every-possible-dna-letter-change-in-the-human-genome/",
+      "category": "portfolio",
+      "tagline": "90 亿点突变的分子地图",
+      "oneLiner": "把人类基因组每一个可能的单碱基突变分子效应预计算成 1PB 图谱，并给出可排序的 AVI 影响分。",
+      "plainExplain": "实验室不可能逐个测完约 90 亿种单字母 DNA 变化。DeepMind 用 AlphaGenome 把这些变体的分子/调控效应预先算好，做成可浏览、可 API 查询的 AlphaGenome Atlas（约 1PB），并发布综合编码区与非编码区的 AVI（Variant Impact）分数与特征归因。合作者已用它优先排序未解罕见病候选位点，并在 UK Biobank 非编码关联中挖出更多信号。",
+      "painPoint": "绝大多数疾病与性状相关位点落在非编码区；研究者面对的是统计噪音海里的海量变体，缺一张『先看哪里』的全基因组分子效应图。",
+      "whyCool": "不是又一个聊天式生信助手，而是把『测不完的组合空间』变成可检索基础设施——类似 AlphaFold DB 对结构的那种跃迁，但对象是变异效应。",
+      "geniusLeap": "把『每个可能突变的分子后果』从不可穷举实验，改写成可预计算、可排序、可解释的基因组操作系统。",
+      "whyMissIt": "容易被当成 DeepMind 常规发论文；真正反常识的是交付形态：不是 demo 几个位点，而是 90 亿变体的即用图谱 + 零代码门户。",
+      "nonCloneSpark": "对任何『组合爆炸到测不完』的科学域，先问：能不能把模型预计算成可共享的 atlas，而不是再做一个问答机器人。",
+      "pattern": "precompute-atlas",
+      "variants": [
+        "罕见病全基因组优先排序流水线",
+        "把 AVI 接入群体遗传学关联检验降噪",
+        "非编码『语法词』（motif）与变体效应并排解释"
+      ],
+      "flow": [
+        { "label": "单字母变体空间", "desc": "~90 亿可能突变" },
+        { "label": "AlphaGenome 预计算", "desc": "分子/调控效应" },
+        { "label": "AVI + 归因", "desc": "排序 · 看哪些过程被扰动" },
+        { "label": "门户 / API", "desc": "实验验证与临床研究入口" }
+      ]
+    },
+    {
+      "id": "koliseum",
+      "name": "Koliseum",
+      "org": "Kimpton (YC)",
+      "url": "https://kimpton.ai",
+      "publishedDate": "2026-09-02",
+      "dateEvidence": "Launch YC 帖相对 2026-09-14 为『12 days ago』≈2026-09-02；公司页同步发布 Koliseum / reality-as-a-judge",
+      "sourceType": "yc",
+      "sourceLabel": "Launch YC · Koliseum by Kimpton",
+      "sourceUrl": "https://www.ycombinator.com/launches/TXh-koliseum-by-kimpton-live-evaluation-arenas-for-ai-models",
+      "category": "business",
+      "tagline": "现实当裁判",
+      "oneLiner": "预测赛场在结果出现前封存模型预报；行动赛场用真实系统状态验收——提出 reality-as-a-judge。",
+      "plainExplain": "静态榜单会泄漏进训练集，模拟器只奖励设计者写进规则的假设。Koliseum 把模型放进『现场竞技场』：Prediction Arenas（如 EarningsBench）在财报发布前 24 小时封存预测，用真实数字打分；Action Arenas 给有界任务与真实工具，用系统终态验收。核心理念 reality-as-a-judge：考官不是另一模型，而是尚未发生、随后会自行揭晓的结果。",
+      "painPoint": "金融与专业工作里，错答案代价极高；现有评测几乎从不『等到现实揭晓』再打分。",
+      "whyCool": "把对冲基金『只信实盘』的纪律搬进模型评测：分数不能彩排、不能回填、不能靠 rubric 自嗨。",
+      "geniusLeap": "重新定义评测问题——从『像不像标准答案』变成『能不能在结果出现前下注并被现实结算』。",
+      "whyMissIt": "表面像又一个金融 AI；真正产品是评测原语（封存→结算），可外溢到任何有可验证终态的行业。",
+      "nonCloneSpark": "找一个『答案会在已知日期自己出现』的领域，先建 arena，再谈模型。",
+      "pattern": "reality-judge",
+      "variants": [
+        "实验室私有 cohort，结果默认不公开",
+        "与交易/预测平台共办公开 arena",
+        "把任意可验证终态工作流做成 Action Arena"
+      ],
+      "flow": [
+        { "label": "模型承诺", "desc": "预测或有界行动" },
+        { "label": "记录封存", "desc": "结果出现前不可改" },
+        { "label": "现实揭晓", "desc": "财报 · 市价 · 系统状态" },
+        { "label": "结算打分", "desc": "对照共识/基线" }
+      ]
+    },
+    {
+      "id": "veriphy",
+      "name": "VeriPhy",
+      "org": "Xu et al.",
+      "url": "https://arxiv.org/abs/2609.03153",
+      "publishedDate": "2026-09-02",
+      "dateEvidence": "arXiv abs 标注 Submitted on 2 Sep 2026（arXiv:2609.03153）",
+      "sourceType": "paper",
+      "sourceLabel": "arXiv · 2609.03153 (2026-09-02)",
+      "sourceUrl": "https://arxiv.org/abs/2609.03153",
+      "category": "portfolio",
+      "tagline": "生成视频的物理审计",
+      "oneLiner": "先把提示词编译成类型化物理义务与执行计划，再用冻结专家工具出具带出处的证据，给出 plausible / implausible / abstain。",
+      "plainExplain": "画面流畅不等于物理可靠；一个标量质量分也说不清『违反了哪条义务、在哪一帧失败』。VeriPhy 用纯文本规划器在看帧之前就把 prompt 编译成类型化物理义务与静态校验过的执行计划；执行时只调用声明过的冻结底层专家（分割跟踪、计数、十一类物理量测、深度、OCR、音频事件等），每步返回带 provenance 的证据记录，再映射到三值裁决。评测锚定在 1500 段人工标注缺陷语料上，核心子集上可追溯召回显著优于同骨干的黑盒提问。",
+      "painPoint": "世界模型/生成视频评测常靠 LLM 当裁判或给一个分数——不可审计，也无法把失败写回生成循环。",
+      "whyCool": "把『物理是否成立』从审美口味改成可追溯证据链：每个裁决都能指回测量与出处。",
+      "geniusLeap": "评测接口不是分数，而是义务→计划→证据→三值裁决的可写回批判协议。",
+      "whyMissIt": "标题像又一篇视频质量论文；真正跃迁是『先声明物理义务再观测』的架构，以及拒绝猜测时的 abstain。",
+      "nonCloneSpark": "任何生成系统都可以先编译『必须成立的义务清单』，再用冻结测量器验收，而不是再训一个偏好模型。",
+      "pattern": "reality-judge",
+      "variants": [
+        "把证据轨迹写回生成 refinement 环",
+        "扩展到机器人世界模型 rollout 验收",
+        "为监管场景输出可审计物理违规报告"
+      ],
+      "flow": [
+        { "label": "编译义务", "desc": "prompt → typed obligations" },
+        { "label": "静态计划", "desc": "声明可用专家调用" },
+        { "label": "冻结测量", "desc": "轨迹 · 深度 · 计数…" },
+        { "label": "三值裁决", "desc": "plausible / implausible / abstain + 出处" }
+      ]
+    },
+    {
+      "id": "duckfightclub",
+      "name": "DuckFightClub",
+      "org": "Nicolas Grenié / Pollen MicroDuck ecosystem",
+      "url": "https://duckfight.club",
+      "publishedDate": "2026-09-09",
+      "dateEvidence": "Product Hunt 日榜 2026-09-09 第 8；Hunted.space 标注 Featured on September 9th, 2026",
+      "sourceType": "producthunt",
+      "sourceLabel": "Product Hunt · 2026-09-09",
+      "sourceUrl": "https://www.producthunt.com/leaderboard/daily/2026/9/9",
+      "category": "workflow",
+      "tagline": "先训练大脑，再等鸭子到货",
+      "oneLiner": "把开源 MicroDuck 的强化学习策略训练做成可直播的对战联赛：你不是在造机器人，你在训它的脑。",
+      "plainExplain": "Hugging Face 与 Pollen 的 MicroDuck 预售火爆后，社区已有仿真器与训练环境。DuckFightClub 把这件事做成『鸭扑俱乐部』：多队花数天训练 RL 策略，在模拟器里争夺 Golden Beak Belt，全程直播；实体 MicroDuck 到货后再搬到线下。核心扭转：硬件交付前，竞赛与围观本身就是训练与分发接口。",
+      "painPoint": "机器人预售常见『付钱等箱子』；策略数据与社区热情在等待期蒸发，RL 排行榜对围观者不可读。",
+      "whyCool": "把强化学习排行榜升级成观赏性运动——策略迁移、直播、城市分会，在硅胶鸭子到货前就开始滚。",
+      "geniusLeap": "重新定义机器人冷启动问题：先卖可对战的『脑』，用赛事网络拉取多样化策略，再落到实体。",
+      "whyMissIt": "表面像 meme 产品；跨域点在于用体育联赛机制解决具身智能的数据与激励冷启动。",
+      "nonCloneSpark": "任何预售硬件都可以问：有没有一个『赛季』让用户在到货前就贡献可迁移策略？",
+      "pattern": "compete-to-train",
+      "variants": [
+        "跨城市线下分会同步直播",
+        "赛季间允许微调传承策略",
+        "把获胜策略打包进出厂技能库"
+      ],
+      "flow": [
+        { "label": "注册战队", "desc": "拿仿真 MicroDuck" },
+        { "label": "训策略", "desc": "RL · 数天迭代" },
+        { "label": "直播对战", "desc": "争夺 Golden Beak" },
+        { "label": "IRL 迁移", "desc": "实体鸭到货后上场" }
+      ]
+    }
+  ]
+}
