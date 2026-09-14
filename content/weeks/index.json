@@ -1,10 +1,16 @@
 {
   "weeks": [
     {
+      "id": "2026-09-14",
+      "label": "2026 · 第 38 周",
+      "themeShort": "语言编译成可感的物理世界（调剂）",
+      "role": "seasoning"
+    },
+    {
       "id": "2026-09-13",
       "label": "2026 · 第 37 周",
       "themeShort": "敢放进生产的信任与协作面"
     }
   ],
-  "defaultWeek": "2026-09-13"
+  "defaultWeek": "2026-09-14"
 }
