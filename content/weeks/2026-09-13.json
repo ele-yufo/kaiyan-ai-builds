@@ -1,0 +1,169 @@
+{
+  "id": "2026-09-13",
+  "label": "2026 · 第 37 周",
+  "dateRange": "2026-09-07 — 2026-09-13",
+  "theme": "本周从「会做事的 agent」转向「敢放进生产的信任与协作面」——房间、审批闸门、MCP 目录、推理降本。",
+  "themeShort": "敢放进生产的信任与协作面",
+  "patterns": [
+    {
+      "id": "room-context",
+      "name": "房间/上下文约束",
+      "summary": "不换工具栈，把 agent 放进已有协作房间，用房间本身的人、话题与权限当边界。",
+      "builds": ["switch"]
+    },
+    {
+      "id": "write-gate",
+      "name": "写入闸门约束",
+      "summary": "读与建议可自动；创建、修改、删除必须过审批闸门，把「敢写」变成可审计动作。",
+      "builds": ["relaticle", "openmarket"]
+    },
+    {
+      "id": "capability-catalog",
+      "name": "能力即目录约束",
+      "summary": "把能力、数据源、MCP 工具做成可发现目录；先看见攻击面与目录，再谈编排与调用。",
+      "builds": ["geiger", "noodle-seed", "anysite", "orchestra"]
+    }
+  ],
+  "builds": [
+    {
+      "id": "switch",
+      "name": "Switch",
+      "org": "Flint AI",
+      "url": "https://www.flintai.dev/products/switch",
+      "category": "workflow",
+      "tagline": "不换工具，只换房间",
+      "oneLiner": "把 agent 当作 Slack / Teams 房间里的新成员，用现有协作上下文工作。",
+      "plainExplain": "Switch 不要求你换掉日常用的聊天工具。它让 AI agent 以「房间成员」身份加入 Slack 或 Teams：看到同一条线程、同一份频道历史，按房间里的人设与话题做事。你继续 @同事，也可以 @agent——边界就是房间本身。",
+      "painPoint": "很多 agent 产品强迫你进一个新控制台、新会话窗口；团队上下文、权限与聊天记录全断了，落地成本高、信任难建立。",
+      "whyCool": "把「换产品」变成「换座位」：协作面零迁移，agent 继承房间的语境与可见范围，而不是另起一套平行宇宙。",
+      "pattern": "room-context",
+      "variants": ["按频道绑定不同专长的 agent", "只读旁听 vs 可发言成员", "企业 SSO 下的房间级权限继承"],
+      "flow": [
+        { "label": "已有房间", "desc": "Slack / Teams 频道" },
+        { "label": "加入成员", "desc": "邀请 Switch agent" },
+        { "label": "共享上下文", "desc": "线程 · 历史 · 人设" },
+        { "label": "房间内行动", "desc": "回复 · 摘要 · 执行" }
+      ]
+    },
+    {
+      "id": "geiger",
+      "name": "Geiger",
+      "org": "Atomburst",
+      "url": "https://github.com/Atomburstofficial/geiger",
+      "category": "portfolio",
+      "tagline": "先看见攻击面",
+      "oneLiner": "盘点本机上的 agents 与 MCP，把「装了什么、暴露什么」摊开看清。",
+      "plainExplain": "Geiger 像一台辐射探测仪：扫描机器上已安装或正在运行的 agent、MCP server 与相关能力入口，输出一份可读的清单。在你开始编排、共享或上生产之前，先回答「这台机器到底暴露了什么」。",
+      "painPoint": "MCP 与本地 agent 扩散很快，团队往往不知道某台开发机/服务器上挂了哪些工具、哪些有写权限、哪些连着敏感数据。",
+      "whyCool": "把安全与治理问题前置成「可见性」问题：没有目录就没有边界，Geiger 先给你地图。",
+      "pattern": "capability-catalog",
+      "variants": ["CI 里跑扫描生成 SBOM 式 agent 清单", "对高危写能力 MCP 标红告警", "多机汇总成组织级能力地图"],
+      "flow": [
+        { "label": "扫描本机", "desc": "agents · MCP · 入口" },
+        { "label": "汇总清单", "desc": "名称 · 路径 · 能力" },
+        { "label": "标出暴露面", "desc": "读写 · 网络 · 密钥" },
+        { "label": "再谈治理", "desc": "禁用 · 隔离 · 审批" }
+      ]
+    },
+    {
+      "id": "noodle-seed",
+      "name": "Noodle Seed",
+      "org": "Noodle Seed",
+      "url": "https://noodleseed.com",
+      "category": "business",
+      "tagline": "不重写产品，补治理运行时",
+      "oneLiner": "给已有软件补上 agent 就绪层与 MCP，让旧产品可被安全编排。",
+      "plainExplain": "Noodle Seed 的思路不是「重写你的产品成 agent-native」。而是在现有软件外（或旁）补一层治理运行时：暴露可控的 MCP 能力、加上策略与审计，让 agent 能调用，但调用路径可管、可回放。",
+      "painPoint": "企业软件沉淀多年，全面重写不现实；直接把 API 裸给 agent 又太危险——缺的是中间那层「可治理的能力封装」。",
+      "whyCool": "承认遗留系统会长期存在：用运行时补丁把「能被 agent 用」和「敢被 agent 用」拆开解决。",
+      "pattern": "capability-catalog",
+      "variants": ["为单一 SaaS 包一层 MCP facade", "按角色裁剪工具目录", "把审批策略嵌进运行时而非业务代码"],
+      "flow": [
+        { "label": "现有软件", "desc": "API · 数据 · 流程" },
+        { "label": "治理运行时", "desc": "策略 · 审计 · 封装" },
+        { "label": "MCP 能力面", "desc": "可发现工具目录" },
+        { "label": "Agent 安全调用", "desc": "编排 · 回放 · 限权" }
+      ]
+    },
+    {
+      "id": "relaticle",
+      "name": "Relaticle",
+      "org": "Relaticle",
+      "url": "https://relaticle.com",
+      "category": "business",
+      "tagline": "读可自动，改删须审批",
+      "oneLiner": "面向 agent 的 CRM：自动读与建议，真正写入与删除必须过人审。",
+      "plainExplain": "Relaticle 把 CRM 设计成 agent-first：agent 可以自由查询客户、线索、互动记录，并给出下一步建议；但一旦要改字段、建记录、删数据，就会卡在写入闸门，等人确认。读是便宜的自动化，写是昂贵的信任动作。",
+      "painPoint": "给 agent 全自动写 CRM 太可怕（脏数据、误删、合规）；完全不让写又浪费 agent。缺的是清晰的读/写权限分裂。",
+      "whyCool": "把产品默认态设成「建议驱动 + 人工闸门」，而不是事后补救的审计日志——闸门本身就是 UX。",
+      "pattern": "write-gate",
+      "variants": ["低风险字段可自动写、高风险必审", "批量导入走二次确认队列", "审批人按客户 owner 路由"],
+      "flow": [
+        { "label": "Agent 读取", "desc": "客户 · 线索 · 互动" },
+        { "label": "生成建议", "desc": "下一步 · 草稿变更" },
+        { "label": "写入闸门", "desc": "人审通过才落库" },
+        { "label": "CRM 更新", "desc": "可审计的变更" }
+      ]
+    },
+    {
+      "id": "anysite",
+      "name": "Anysite.io",
+      "org": "Anysite",
+      "url": "https://anysite.io",
+      "category": "business",
+      "tagline": "数据产品 = MCP 目录",
+      "oneLiner": "把 B2B 数据做成 agent 可调用的 MCP 目录，而不是又一个仪表盘。",
+      "plainExplain": "Anysite 认为下一代数据产品的交付形态不是更多图表，而是一份 MCP 工具目录：agent（或人通过 agent）按需查询、拉取、组合 B2B 数据。产品即能力清单，集成即「接上目录」。",
+      "painPoint": "传统 B2B 数据靠导出 CSV、嵌仪表盘、写一次性 API 对接；agent 时代这些都太慢，且无法被编排层统一发现。",
+      "whyCool": "重新定义「卖数据」：卖的是可组合的能力条目，而不是静态报表订阅。",
+      "pattern": "capability-catalog",
+      "variants": ["按行业垂直拆分子目录", "用量计费挂在 MCP 调用上", "与内部数据湖并列成统一工具面"],
+      "flow": [
+        { "label": "B2B 数据源", "desc": "公司 · 联系人 · 信号" },
+        { "label": "封装为 MCP", "desc": "工具 · schema · 限额" },
+        { "label": "目录可发现", "desc": "agent 按需检索" },
+        { "label": "编排调用", "desc": "查询 ·  enrichment" }
+      ]
+    },
+    {
+      "id": "orchestra",
+      "name": "Orchestra",
+      "org": "Orchestra",
+      "url": "https://orchestra.ai",
+      "category": "portfolio",
+      "tagline": "只做路由与专科化",
+      "oneLiner": "自优化推理层：把请求路由到合适模型/专科，专注重本与质量，不做万事应用。",
+      "plainExplain": "Orchestra 把自己定位成推理基础设施的「交通调度」：观察负载与效果，把不同任务路由到更合适的模型或专科化路径，并持续自优化。它不抢应用层的戏，只把「用哪颗脑、花多少钱」这件事做好。",
+      "painPoint": "团队要么死绑一个贵模型，要么手写一堆 if-else 路由；成本和质量都难持续优化，还容易和业务逻辑缠在一起。",
+      "whyCool": "把降本增效收敛成一个可独立演进的层——应用保持稳定，路由策略可以学习。",
+      "pattern": "capability-catalog",
+      "variants": ["按延迟/成本/质量三目标加权", "专科小模型承接高频简单任务", "失败自动升到更强模型"],
+      "flow": [
+        { "label": "推理请求", "desc": "任务 · 约束 · SLA" },
+        { "label": "路由决策", "desc": "模型 · 专科 · 策略" },
+        { "label": "执行与观测", "desc": "质量 · 成本 · 延迟" },
+        { "label": "自优化", "desc": "反馈写回路由" }
+      ]
+    },
+    {
+      "id": "openmarket",
+      "name": "OpenMarket",
+      "org": "m11",
+      "url": "https://openmarket.m11.ai",
+      "category": "workflow",
+      "tagline": "对抗式信任",
+      "oneLiner": "多智能体市场：买卖双方 agent 交易，另有 truth agent 负责核验与对抗式信任。",
+      "plainExplain": "OpenMarket 设想一个多 agent 可交易的市场：供给方与需求方 agent 自行议价成交；同时引入 truth agent（真相/核验智能体）做对抗式校验——不盲目信任任一交易方的陈述，而是用独立核验建立可落地的信任。",
+      "painPoint": "多 agent 协作一旦涉及价值交换，幻觉、欺诈与信息不对称会放大；单靠「大家都是好 agent」无法上生产。",
+      "whyCool": "把信任从人格假设改成机制设计：对抗、核验、市场规则，而不是更多对齐口号。",
+      "pattern": "write-gate",
+      "variants": ["成交前强制 truth agent 双签", "争议仲裁队列", "声誉分影响可成交额度"],
+      "flow": [
+        { "label": "供需 Agent", "desc": "挂单 · 询价 · 议价" },
+        { "label": "Truth Agent", "desc": "核验陈述与履约" },
+        { "label": "对抗式确认", "desc": "通过才锁定交易" },
+        { "label": "市场结算", "desc": "成交 · 声誉更新" }
+      ]
+    }
+  ]
+}
