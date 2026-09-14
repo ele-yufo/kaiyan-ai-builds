@@ -1,1 +1,12 @@
-LOAD_FROM_BOX:/tmp/week_half1_enriched.json
+{
+  "id": "2026-09-14",
+  "label": "2026 · 第 38 周",
+  "dateRange": "2026-09-01 — 2026-09-14",
+  "publishedDate": "2026-09-14",
+  "role": "main",
+  "note": "本周只收 4 条。打开弹窗就能看懂——不用点官网。写法：对五岁小孩讲人话。",
+  "theme": "换问题问法，而不是堆工具",
+  "themeShort": "换问题问法，而不是堆工具",
+  "patterns": [],
+  "builds": []
+}
