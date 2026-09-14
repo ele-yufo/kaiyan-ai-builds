@@ -1,10 +1,15 @@
 {
   "weeks": [
     {
+      "id": "2026-09-14c",
+      "label": "2026 · 第 38 周 · 黑客松同档成品",
+      "themeShort": "黑客松同档：能演示的成品",
+      "role": "main"
+    },
+    {
       "id": "2026-09-14b",
       "label": "2026 · 第 38 周 · 普通人 vibe 出来的",
-      "themeShort": "普通人 vibe 出来的成品",
-      "role": "main"
+      "themeShort": "普通人 vibe 出来的成品"
     },
     {
       "id": "2026-09-14",
@@ -17,5 +22,5 @@
       "themeShort": "敢放进生产的信任与协作面"
     }
   ],
-  "defaultWeek": "2026-09-14b"
+  "defaultWeek": "2026-09-14c"
 }

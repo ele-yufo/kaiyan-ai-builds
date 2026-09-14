@@ -1,0 +1,38 @@
+{
+  "id": "2026-09-14c",
+  "label": "2026 · 第 38 周 · 黑客松同档成品",
+  "dateRange": "参考档 · Build Week 约 2026-07 提交 / 08-25 公布获奖（略超两周窗，优先质量）",
+  "publishedDate": "2026-09-14",
+  "role": "main",
+  "note": "OpenAI Build Week 已结束（获奖约 2026-08-25 公布）。本批是同档高质量获奖/高赞作品供作品集与灵感参考，不是本周新交的玩具 demo。正在进行的相关黑客松：Firebird Build（亚美尼亚，OpenAI×NVIDIA，Codex，申请截止约 09-20，活动 09-26–27）；Sea × OpenAI Codex Hackathon 越南站（申请约至 09-26，活动 10-31）。打开弹窗即可看懂，不必点官网。",
+  "theme": "OpenAI Build Week 已经办完，但标准还在：用 Codex / GPT‑5.6 在一周内交出能演示、能核验、敢给人用的成品。本批挑的是获奖与同档作品——兽医诊所分诊、构音障碍沟通、空间声线框、古代机械数字馆、越南声调教练、Windows 接 HomePod，外加 Claude Opus Build Day 同档的唐代建筑证据链重建。正在开的：Firebird Build（09-26–27）与越南 Codex Hackathon（10-31）。",
+  "themeShort": "黑客松同档：能演示的成品",
+  "patterns": [
+    {
+      "id": "evidence-museum",
+      "name": "能拆开的证据博物馆",
+      "summary": "不是漂亮的 3D 转转盘。每个零件都能点回史料、实物或明确标注的推断；有争议就摆两套，不装成唯一真相。",
+      "builds": ["mechanica", "tekton"]
+    },
+    {
+      "id": "human-confirm-gate",
+      "name": "人点头再行动",
+      "summary": "AI 可以建议句子、整理病史，但开口说话或医疗分流前必须有人确认。把『帮你』和『替你做决定』拆开。",
+      "builds": ["second-voice", "vetriage"]
+    },
+    {
+      "id": "deterministic-core",
+      "name": "硬核算力干活，AI 只当助手",
+      "summary": "几何、声学、音高曲线用确定性算法算；模型负责解释、起稿、教练。算不清就弃权，不硬猜。",
+      "builds": ["echo-canvas", "dau"]
+    },
+    {
+      "id": "stubborn-life-gap",
+      "name": "卡住很久的生活缺口",
+      "summary": "从自己天天踩的坑出发：Windows 接不上家里的 AirPlay 音箱。用 AI 编程把『早就该有人做』的事做成能装能用的产品。",
+      "builds": ["airbridge"]
+    }
+  ],
+  "buildIds": ["mechanica", "second-voice", "vetriage", "echo-canvas", "dau", "airbridge", "tekton"],
+  "builds": []
+}
