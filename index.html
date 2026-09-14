@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="开眼 · AI Builds — 可视化周刊，用人话与流程图讲清每个 AI build 实际在做什么。" />
+  <meta name="theme-color" content="#0a0b0f" />
+  <title>开眼 · AI Builds</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%237c9cff'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-size='16' font-family='system-ui' fill='%230a0b0f' font-weight='700'%3E开%3C/text%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#/" aria-label="开眼 · AI Builds 首页">
+        <div class="brand-mark" aria-hidden="true">开</div>
+        <div class="brand-text">
+          <strong>开眼 · AI Builds</strong>
+          <span>VISUAL WEEKLY DIGEST</span>
+        </div>
+      </a>
+      <div class="header-actions">
+        <a class="nav-link" href="#patterns" id="nav-patterns">约束模式</a>
+        <div class="week-switcher">
+          <label class="sr-only" for="week-select">选择周刊</label>
+          <select id="week-select" class="week-select" aria-label="周刊切换"></select>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div id="loading" class="loading" role="status">加载中…</div>
+
+  <div id="app" hidden>
+    <main class="main">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-eyebrow" id="hero-eyebrow"></div>
+        <h1 id="hero-title"></h1>
+        <p class="hero-theme" id="hero-theme"></p>
+        <div class="hero-meta" id="hero-meta"></div>
+      </section>
+
+      <section id="builds" aria-labelledby="builds-heading">
+        <h2 id="builds-heading" class="sr-only">本周 Builds</h2>
+        <div class="filters" id="filters" role="toolbar" aria-label="分类筛选"></div>
+        <div class="pattern-banner" id="pattern-banner" role="status"></div>
+        <div class="card-grid" id="card-grid"></div>
+      </section>
+
+      <section id="patterns" aria-labelledby="patterns-heading">
+        <div class="section-head">
+          <h2 id="patterns-heading">三种约束模式</h2>
+          <p>本周 builds 共享的可复用设计范式——点击可筛选对应作品。</p>
+        </div>
+        <div class="patterns-grid" id="patterns-grid"></div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p><strong>开眼 · AI Builds</strong> — 让抽象 digest 变成看得见的理解。</p>
+      <p style="margin-top:0.4rem">产品名与链接保持英文原文 · 界面为简体中文</p>
+    </footer>
+  </div>
+
+  <!-- Detail modal -->
+  <div class="modal-overlay" id="modal-overlay" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal" role="document">
+      <button type="button" class="modal-close" id="modal-close" aria-label="关闭">×</button>
+      <div class="modal-body" id="modal-body"></div>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
