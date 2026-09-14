@@ -1,0 +1,26 @@
+
+.detail-eli5,
+.detail-analogy,
+.detail-before-after,
+.detail-walkthrough {
+  padding: 0.85rem 1rem;
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--accent) 8%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent) 22%, transparent);
+}
+.detail-eli5 h3,
+.detail-analogy h3,
+.detail-before-after h3,
+.detail-walkthrough h3 {
+  color: var(--accent);
+  letter-spacing: 0.08em;
+  font-size: 0.78rem;
+  text-transform: none;
+}
+.detail-eli5 p {
+  color: var(--text);
+  font-size: 0.98rem;
+}
+.detail-section p + p {
+  margin-top: 0.75rem;
+}
