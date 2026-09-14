@@ -21,7 +21,7 @@
   "geniusLeap": "把 vibe coding 用在『只服务自己的微小摩擦』上，而不是又做一个平台。",
   "whyMissIt": "看起来像又一个番茄钟。价值在于：作者诚实标注 vibe-coded，并强调自己读过代码。",
   "nonCloneSpark": "你日常哪个『差一点点就不爽』的小习惯，值得做成只给自己用的扩展？",
-  "pattern": "just-for-me",
+  "pattern": "weird-personal",
   "variants": ["拦截改成只允许白名单", "和实体番茄灯联动", "给小孩做『作业模式』浏览器配置"],
   "flow": [{"label": "列出黑名单", "desc": "哪些站要挡"}, {"label": "按下计时", "desc": "开始专注"}, {"label": "网站被挡", "desc": "标签还在"}, {"label": "时间结束", "desc": "恢复自由"}]
 }
