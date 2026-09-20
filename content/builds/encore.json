@@ -1,0 +1,48 @@
+{
+  "id": "encore",
+  "name": "Encore!",
+  "org": "ChungYi Huang · OpenAI Build Week 教育赛道决赛",
+  "url": "https://devpost.com/software/encore-every-mistake-gets-an-encore",
+  "publishedDate": "2026-07-20",
+  "dateEvidence": "Devpost 启动约 2026-07-20；Build Week 提交期约 07；获奖名单 2026-08-25 公布为 Education Finalist；39 次 Codex session，六天从 git init 到完成",
+  "sourceType": "hackathon",
+  "sourceLabel": "OpenAI Build Week · Education 决赛 · Encore!",
+  "sourceUrl": "https://developers.openai.com/blog/build-week-winners",
+  "category": "portfolio",
+  "tagline": "小孩考卷上的错题，变成今晚的冒险故事书",
+  "oneLiner": "拍一张孩子的试卷。GPT‑5.6 读题判对错，区分『概念不会』与『粗心算错』，再把错题变成手绘风故事书小游戏：切披萨学分数、排火车学排序……答错没有大红叉，龙 Momo 喊 Encore! 换同概念新题；错题次日还会变成复习任务。",
+  "plainExplain": "作者先写 AGENTS.md 锁设计/架构/『答案永不进 iframe』，再用 39 个 Codex 会话按块交付。游戏模板是固定测过的代码；模型只填严格内容契约，校验失败把错误回灌给模型自修。支持英/繁中/日/韩。在五份真实试卷上 33 题与人工答案一致。",
+  "painPoint": "家长晚上面对错题又累又急，容易只打红叉；市面刷题 App 又不是『这一张卷子、这一个孩子』的专属内容。",
+  "whyCool": "把『错题』重新定义为稀缺游戏关卡原料——只对这个孩子有价值。完成度高，安全边界清楚（答案在宿主侧）。",
+  "eli5": "小孩数学卷错了两题。大人常画两个大红叉，小孩心里一沉，题目就翻篇了。\n\nEncore 说：这两题其实是全世界最适合『这个小孩』的游戏关卡。你拍张卷子照片，它先当一位细心老师：分清是『真不会』还是『太赶写错』。\n\n然后它编一本手绘小故事：龙 Momo 带孩子再闯一次。比如分数错了，就变成切披萨；顺序错了，就变成排火车。\n\n游戏里再答错？没有红叉。Momo 喊『Encore!』（再来一次），换一道练同一个知识点的新题。今天错过的，明天还可能变成复习小任务。\n\n作者用 Codex 六天做出完整产品，但游戏怎么玩是写死测过的；AI 只负责填故事和题目内容，而且正确答案锁在外面，小孩在游戏里偷看不到。\n\n你不打开也能懂：这是『把丢脸的红叉，改成今晚想再玩的冒险』。",
+  "analogy": "像把错题本交给一位会画画的私教：同一道伤，改写成只属于你的副本关卡。",
+  "beforeAfter": "以前：红叉 → 羞耻或放弃；通用题库不贴合当次试卷。\n\n现在：拍照阅卷 → 概念/粗心分流 → 故事书关卡 → Encore 重试 → 次日复习任务。",
+  "walkthrough": "1）家长/老师拍试卷。\n2）模型逐题识别并判定概念缺口 vs 粗心。\n3）为错题生成故事书关卡（多种玩法模板）。\n4）孩子在关卡里重练；答错触发 Encore 同概念新题。\n5）次日复习任务带回昨日缺口。\n6）可切换语言；计划支持更多科目与纸质故事书打印。",
+  "geniusLeap": "把『仅对该学习者有价值的错误』当成生成游戏内容的稀缺原料，并用契约把模型关在内容层。",
+  "whyMissIt": "像教育 EdTech。锋利处：不是又一个刷题，而是『这一张卷子』的个性化。",
+  "nonCloneSpark": "你领域里，哪些『失败样本』其实是最好的专属训练关卡？",
+  "pattern": "mistake-as-quest",
+  "variants": [
+    "钢琴错音 → 小节闯关",
+    "编程测试失败用例 → 解谜关",
+    "运动动作偏差 → 明日复训副本"
+  ],
+  "flow": [
+    {
+      "label": "拍试卷",
+      "desc": "读题判错"
+    },
+    {
+      "label": "分清不会/粗心",
+      "desc": "缺口诊断"
+    },
+    {
+      "label": "生成故事关",
+      "desc": "模板+内容契约"
+    },
+    {
+      "label": "Encore 再练",
+      "desc": "无红叉羞辱"
+    }
+  ]
+}
