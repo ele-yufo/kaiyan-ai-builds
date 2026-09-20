@@ -1,0 +1,44 @@
+{
+  "id": "2026-09-20",
+  "label": "2026 · 第 39 周 · 窗外的鸟与可带走的文件",
+  "dateRange": "2026-09-06 — 2026-09-20（主菜）· Build Week 决赛圈补档（约 07 提交 / 08-25 公布）",
+  "publishedDate": "2026-09-20",
+  "role": "main",
+  "note": "本周主菜来自两周内可追溯发布：Fugleramme（听鸟→1800s 电子纸）、Capsule（应用当文件发送）、Relativity Park（光速 5km/h 公园）。窗口内高质量不足的部分，补 OpenAI Build Week 决赛圈创意成品 Encore! / SayAhead / Bander，并标明黑客松日期。正在进行：Firebird Build（亚美尼亚，约 09-26–27）；Sea × OpenAI Codex 越南站（申请约至 09-26，活动 10-31）。打开弹窗即可看懂。",
+  "theme": "普通人用 AI 编程，正在把『窗外正在发生的事』和『发得出去的小工具』做成能演示的成品：鸟鸣变成墙上的历史图鉴，网页应用变成可微信发送的文件，光速被拧成走路速度好让你看见相对论；补档的黑客松决赛则把错题变成故事书、把电话与家庭账号的方向盘交回人手里。",
+  "themeShort": "窗外的鸟 · 可带走的文件 · 人握方向盘",
+  "patterns": [
+    {
+      "id": "world-into-object",
+      "name": "把外面焊进一件物件",
+      "summary": "实时感知不做成又一个 App 列表，而做成能挂在生活里的东西；模型只负责认与胶水，审美可以故意不生成。",
+      "builds": ["fugleramme"]
+    },
+    {
+      "id": "app-as-document",
+      "name": "应用像文件一样传",
+      "summary": "vibe 出来的个人工具不必先变成 SaaS。UI 和数据住进同一个文件，分享像发文档。",
+      "builds": ["capsule"]
+    },
+    {
+      "id": "feel-the-invisible",
+      "name": "拧慢旋钮看见抽象",
+      "summary": "把平时不可见的物理/概念降到人尺度；AI 补实现短板，人死守正确性。",
+      "builds": ["relativity-park"]
+    },
+    {
+      "id": "mistake-as-quest",
+      "name": "失败变成专属关卡",
+      "summary": "错题、错音、失败用例是稀缺的个人化内容原料——改写成想再玩的副本，而不是红叉。",
+      "builds": ["encore"]
+    },
+    {
+      "id": "human-steering-wheel",
+      "name": "人握着方向盘",
+      "summary": "助手可以说话、建议、执行，但剧本、承诺与账号动作前必须让人看清真面目并点头；世界变了就拒绝，不撒谎。",
+      "builds": ["sayahead", "bander"]
+    }
+  ],
+  "buildIds": ["fugleramme", "capsule", "relativity-park", "encore", "sayahead", "bander"],
+  "builds": []
+}
