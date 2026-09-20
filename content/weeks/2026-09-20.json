@@ -12,33 +12,51 @@
       "id": "world-into-object",
       "name": "把外面焊进一件物件",
       "summary": "实时感知不做成又一个 App 列表，而做成能挂在生活里的东西；模型只负责认与胶水，审美可以故意不生成。",
-      "builds": ["fugleramme"]
+      "builds": [
+        "fugleramme"
+      ]
     },
     {
       "id": "app-as-document",
       "name": "应用像文件一样传",
       "summary": "vibe 出来的个人工具不必先变成 SaaS。UI 和数据住进同一个文件，分享像发文档。",
-      "builds": ["capsule"]
+      "builds": [
+        "capsule"
+      ]
     },
     {
       "id": "feel-the-invisible",
       "name": "拧慢旋钮看见抽象",
       "summary": "把平时不可见的物理/概念降到人尺度；AI 补实现短板，人死守正确性。",
-      "builds": ["relativity-park"]
+      "builds": [
+        "relativity-park"
+      ]
     },
     {
       "id": "mistake-as-quest",
       "name": "失败变成专属关卡",
       "summary": "错题、错音、失败用例是稀缺的个人化内容原料——改写成想再玩的副本，而不是红叉。",
-      "builds": ["encore"]
+      "builds": [
+        "encore"
+      ]
     },
     {
       "id": "human-steering-wheel",
       "name": "人握着方向盘",
       "summary": "助手可以说话、建议、执行，但剧本、承诺与账号动作前必须让人看清真面目并点头；世界变了就拒绝，不撒谎。",
-      "builds": ["sayahead", "bander"]
+      "builds": [
+        "sayahead",
+        "bander"
+      ]
     }
   ],
-  "buildIds": ["fugleramme", "capsule", "relativity-park", "encore", "sayahead", "bander"],
+  "buildIds": [
+    "fugleramme",
+    "capsule",
+    "relativity-park",
+    "encore",
+    "sayahead",
+    "bander"
+  ],
   "builds": []
 }

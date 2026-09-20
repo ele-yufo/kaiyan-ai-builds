@@ -1,0 +1,48 @@
+{
+  "id": "relativity-park",
+  "name": "Relativity Park",
+  "org": "Dmitry Brant · Show HN",
+  "url": "https://rivendell.dmitrybrant.com/relativity/",
+  "publishedDate": "2026-09-13",
+  "dateEvidence": "作者博文 2026-09-13；Show HN 同日约 630 分（What if the speed of light was 5 km/h?）；明确写大量使用 Claude Opus 5 协助 WebGL，但相对论公式由作者反复校正",
+  "sourceType": "show-hn",
+  "sourceLabel": "Show HN · speed of light 5 km/h · 约 630 分",
+  "sourceUrl": "https://news.ycombinator.com/front?day=2026-09-10",
+  "category": "portfolio",
+  "tagline": "把光速调成走路速度，公园里亲眼看见相对论",
+  "oneLiner": "浏览器里一座普通公园，但光速被设成约 5 km/h。你用 WASD 加速时，红移蓝移、时间膨胀、长度收缩、Terrell 旋转会在人尺度上出现。作者用 Claude 补 OpenGL 经验，自己死磕物理公式，故意做成轻量 JS/WebGL，而不是 Unity 课件。",
+  "plainExplain": "灵感来自 MIT OpenRelativity，但目标是『打开网页就能玩』且尽量物理准确。作者强调：高中代数级别的公式摆对了，怪现象会自己涌现；LLM 不能替代对方程的理解，他多次纠正模型算错。",
+  "painPoint": "相对论在课本里抽象；多数演示要么太玩具，要么绑在重型游戏引擎里，普通人难上手。",
+  "whyCool": "高质量『解释型作品』：AI 编程降低图形门槛，但作者把正确性闸门握在手里——这是 vibe coding 作品集该有的姿态。",
+  "eli5": "光速平常快到你感觉不到『奇怪』。作者做了一座假公园，把光速拧成大概走路那么快。\n\n于是你在公园里一跑快，眼前的世界就开始『说谎』：颜色会偏红偏蓝，东西看起来挤扁或拧着，时间快慢也不再跟你手表一样。这些不是特效滤镜乱加的，而是光速变慢之后，光从不同地方『赶到你眼睛』的时间差造成的。\n\n它跑在网页里，用普通键盘就能玩。作者说自己相对论数学很熟，但不熟 3D 画图，所以请 Claude 帮忙写 WebGL；可每次公式不对，他都把正确方程塞回去，逼模型改。\n\n你不打开也能懂：这是『把课本里的相对论，变成能在公园里散步看见的东西』。",
+  "analogy": "像把高速摄像机的时间轴拧慢，好让肉眼看见平时看不见的溅射——只不过这里拧的是光速。",
+  "beforeAfter": "以前：Unity 课件或静态图想象相对论。\n\n现在：浏览器实时公园；多普勒与光程延迟效应可感；AI 辅助实现，人把关物理。",
+  "walkthrough": "1）打开网页仿真。\n2）WASD 在公园移动并加速。\n3）观察接近『慢光速』时的颜色偏移与几何畸变。\n4）对比静止与高速时的时间感差异。\n5）对照作者博文理解哪些效应来自光程延迟。\n6）发现问题可反馈；作者欢迎挑物理毛病。",
+  "geniusLeap": "把『不可见的物理约束』降到人尺度，并用 AI 补齐实现短板同时保留科学闸门。",
+  "whyMissIt": "像科普小游戏。作品集价值：展示如何用 AI 做高完成度解释型产品，而不是放弃正确性。",
+  "nonCloneSpark": "哪条你懂、别人怕的抽象知识，值得做成『拧慢旋钮就能看见』的互动？",
+  "pattern": "feel-the-invisible",
+  "variants": [
+    "把声波调慢看多普勒课堂",
+    "城市交通里的相对论视觉隐喻",
+    "金融『信息光速』可视化"
+  ],
+  "flow": [
+    {
+      "label": "拧慢光速",
+      "desc": "5 km/h"
+    },
+    {
+      "label": "在公园加速",
+      "desc": "WASD"
+    },
+    {
+      "label": "看见畸变",
+      "desc": "多普勒/收缩"
+    },
+    {
+      "label": "对照公式",
+      "desc": "人把关正确性"
+    }
+  ]
+}

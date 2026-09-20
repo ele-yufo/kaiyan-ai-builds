@@ -1,0 +1,48 @@
+{
+  "id": "capsule",
+  "name": "Capsule",
+  "org": "bashtian · Show HN",
+  "url": "https://withcapsule.app/",
+  "publishedDate": "2026-09-15",
+  "dateEvidence": "Show HN 约 2026-09-15（HN 约 377 分）；GIGAZINE 2026-09-16 报道；Rust + Tauri 2.0 桌面宿主，.capsule = SQLite 里装 UI+数据",
+  "sourceType": "show-hn",
+  "sourceLabel": "Show HN · Capsule single-file apps · 约 377 分",
+  "sourceUrl": "https://news.ycombinator.com/item?id=49712278",
+  "category": "business",
+  "tagline": "一个 App 变成一个能微信发出去的文件",
+  "oneLiner": "Capsule 把界面、资源、本地 SQLite 数据打成一个 `.capsule` 文件：像发 PDF 一样 AirDrop / 邮件 / 聊天发送。对方装好播放器点开就能用，默认离线、无账号。可用提示词让 AI 助手按官方 wizard 生成整份胶囊应用。",
+  "plainExplain": "作者烦的是：现在用 AI 很快写出小 HTML 工具，但一要存数据就得找托管，一要分享就更烦。Capsule 用 Rust/Tauri 做宿主，把 HTML/CSS/资源嵌进 SQLite，用户数据可走 localStorage 风格或文档集合 API。默认无文件系统与联网权限，要权限再开。网页预览与桌面端已可试；计划开放文件格式规格。",
+  "painPoint": "普通人 vibe 出的记账、菜谱、家庭工具，要么困在浏览器沙箱不好带走，要么被迫变成又一个要登录的 SaaS。",
+  "whyCool": "产品洞察很锋利：把『可分享的个人应用』重新定义成文档，而不是网站。这正是 vibe coding 时代缺的分发层。",
+  "eli5": "你做了一个『家里菜谱本』小程序。以前你要么：\n- 把它挂到网上（要账号、服务器、担心隐私），要么\n- 只能在自己电脑浏览器里玩，发给朋友很麻烦。\n\nCapsule 说：把它变成一种新文件，后缀叫 `.capsule`，像 Word 文档。文件里面既有按钮和画面，也有你填进去的菜和笔记。\n\n你把文件丢进微信/隔空投送，对方电脑装了 Capsule 播放器，一点就打开——数据还在文件里，不必登录你的云。飞机上也能用。\n\n想改功能？可以跟 AI 说『加个黑暗模式』，它按官方说明书帮你改这份文件。\n\n默认它很乖：不能随便读你硬盘，也不能偷偷上网，除非你允许。\n\n你不下载也能懂：这是『把小应用变成能传来传去的文件』，专门接住 AI 快速做出的个人工具。",
+  "analogy": "像 Excel：表格界面和格子里的数住在同一个文件里；Capsule 把这套逻辑推广到任意小网页应用。",
+  "beforeAfter": "以前：vibe 出的小工具 → 托管/账号/链接失效；或纯静态 HTML 不好存复杂数据。\n\n现在：一个文件带走 UI+数据；可合并副本；AI 可按 prompt 生成/迭代。",
+  "walkthrough": "1）下载 Capsule 桌面端（或用网页预览）。\n2）用模板或把官方 prompt.txt 丢给 AI，生成菜谱/待办等应用。\n3）在应用里录入数据，全部写回同一个 `.capsule`。\n4）把文件发给家人；对方打开即用，可改出自己的副本。\n5）需要时导出 CSV/JSON；冲突可用 UUID+时间戳合并。\n6）默认沙箱：无网、无任意文件访问，直到授权。",
+  "geniusLeap": "把 vibe coding 的产出物，从『网站』改写成『可离线传来传去的文档容器』。",
+  "whyMissIt": "看起来像又一个本地运行时。真正机会是：家庭与小团队不再为每个小工具养一个后端。",
+  "nonCloneSpark": "你最近用 AI 做的哪个小工具，其实更适合『发一个文件』而不是『开一个网址』？",
+  "pattern": "app-as-document",
+  "variants": [
+    "家庭账单胶囊（发会计顾问一份副本）",
+    "活动报名表胶囊（现场 U 盘分发）",
+    "老师出题胶囊（学生交回合并）"
+  ],
+  "flow": [
+    {
+      "label": "AI/模板生成",
+      "desc": "做出界面"
+    },
+    {
+      "label": "数据进文件",
+      "desc": "SQLite 打包"
+    },
+    {
+      "label": "当文档发送",
+      "desc": "聊天/U盘"
+    },
+    {
+      "label": "对方点开即用",
+      "desc": "离线优先"
+    }
+  ]
+}
