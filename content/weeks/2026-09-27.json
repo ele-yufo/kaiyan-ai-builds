@@ -1,0 +1,46 @@
+{
+  "id": "2026-09-27",
+  "label": "2026 · 第 40 周 · 复盘成片与表格长手",
+  "dateRange": "2026-09-13 — 2026-09-27（主菜）· Firebird/Sea 黑客松尚无画廊，仅脚注",
+  "publishedDate": "2026-09-27",
+  "role": "main",
+  "note": "本周窗口偏薄：主菜五道均来自两周内可追溯发布（Show HN / Indie Hackers / Product Hunt）。Firebird Build（亚美尼亚×OpenAI×NVIDIA Codex，约 09-26–27）与 Sea×OpenAI Codex 越南站（活动约 10-31）此刻尚无项目画廊，仅作脚注，不硬凑。上周 Build Week 补档与已上桌作品一律不重上。打开弹窗即可看懂。",
+  "theme": "普通人用 AI 编程，正在把『事后复盘』『表格脚本』『服务交付』『财务重跑』『浏览器剪辑』做成能演示的成品：棋手下的出声思考变成旁白复盘片，表格长出像 Cursor 一样会试跑的手，服务公司用旧交付物的修改差教会流水线，财务工作流让模型只画一次菜谱、本地确定性重跑，短视频作者则用 Claude 造剪刀而不是让模型当导演。",
+  "themeShort": "复盘成片 · 表格长手 · 点头再跑",
+  "patterns": [
+    {
+      "id": "teach-yourself-loop",
+      "name": "把自己的想法变成老师",
+      "summary": "录音/笔记里的真实犹豫比抽象最优解更值钱；专业工具负责对错，模型负责追问与讲成能看的故事。",
+      "builds": [
+        "chess-postmortem"
+      ]
+    },
+    {
+      "id": "everyday-tool-hands",
+      "name": "日常工具长出手",
+      "summary": "不新开一座 SaaS 圣殿，而是给表格、浏览器剪辑这类每天打开的东西装上『读写-试跑-修好』的双手；AI 造器械，人仍做事。",
+      "builds": [
+        "automate-sheets",
+        "clipyouredit"
+      ]
+    },
+    {
+      "id": "approve-learn-rerun",
+      "name": "点头、记住、再跑一遍",
+      "summary": "服务与财务最怕胡编和下个月重讲：计划或交付先可见，人点头才出门；改正文与 SQL 菜谱留下来，下次一键重跑。",
+      "builds": [
+        "mycel",
+        "ekselio"
+      ]
+    }
+  ],
+  "buildIds": [
+    "chess-postmortem",
+    "automate-sheets",
+    "mycel",
+    "ekselio",
+    "clipyouredit"
+  ],
+  "builds": []
+}
